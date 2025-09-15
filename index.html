@@ -1,27 +1,250 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kisan Saathi - Smart Crop Advisory System</title>
-    <meta name="description" content="AI-powered farming platform providing real-time crop guidance, weather alerts, market prices, and agricultural insights for Indian farmers." />
-    <meta name="author" content="Kisan Saathi" />
-    <meta name="keywords" content="farming, agriculture, crop advisory, weather alerts, market prices, soil health, pest detection, Indian farmers, agricultural technology" />
+    <meta name="description" content="AI-powered farming platform providing real-time crop advisory, weather alerts, market prices, and agricultural guidance for farmers in India.">
+    <meta name="keywords" content="farming, agriculture, crop advisory, weather alerts, market prices, soil health, pest detection, kisan">
+    <meta name="author" content="Kisan Saathi">
+    <link rel="canonical" href="https://kisansaathi.com">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kisansaathi.com">
+    <meta property="og:title" content="Kisan Saathi - Smart Crop Advisory System">
+    <meta property="og:description" content="AI-powered farming platform providing real-time crop advisory, weather alerts, market prices, and agricultural guidance for farmers in India.">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://kisansaathi.com">
+    <meta property="twitter:title" content="Kisan Saathi - Smart Crop Advisory System">
+    <meta property="twitter:description" content="AI-powered farming platform providing real-time crop advisory, weather alerts, market prices, and agricultural guidance for farmers in India.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23059669' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 2v20M2 7l1.5-1.5L4 7l1.5 1.5L7 7l1.5 1.5L10 7l1.5 1.5L13 7'/%3E%3C/svg%3E">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app" class="app">
+        <!-- Sidebar -->
+        <aside id="sidebar" class="sidebar">
+            <header class="sidebar-header">
+                <div class="sidebar-brand">
+                    <div class="brand-icon">
+                        <svg class="sprout-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M12 2v20M2 7l1.5-1.5L4 7l1.5 1.5L7 7l1.5 1.5L10 7l1.5 1.5L13 7"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h1 class="brand-title">Kisan Saathi</h1>
+                    </div>
+                </div>
+                <p class="brand-subtitle">Smart Crop Advisory System</p>
+            </header>
 
-    <meta property="og:title" content="Kisan Saathi - Smart Crop Advisory System" />
-    <meta property="og:description" content="AI-powered farming platform providing real-time crop guidance, weather alerts, market prices, and agricultural insights for Indian farmers." />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+            <nav class="sidebar-nav">
+                <button class="nav-item active" data-section="crop-advisory">
+                    <div class="nav-item-content">
+                        <div class="nav-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M12 2v20M2 7l1.5-1.5L4 7l1.5 1.5L7 7l1.5 1.5L10 7l1.5 1.5L13 7"/>
+                            </svg>
+                        </div>
+                        <div class="nav-text">
+                            <h3>Crop Advisory</h3>
+                            <p>Real-time guidance</p>
+                        </div>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="m9 18 6-6-6-6"/>
+                        </svg>
+                    </div>
+                </button>
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@kisansaathi" />
-    <meta name="twitter:title" content="Kisan Saathi - Smart Crop Advisory System" />
-    <meta name="twitter:description" content="AI-powered farming platform for Indian farmers" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-  </head>
+                <button class="nav-item" data-section="weather-alerts">
+                    <div class="nav-item-content">
+                        <div class="nav-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"/>
+                                <path d="m16 14-3-2-3 2"/>
+                            </svg>
+                        </div>
+                        <div class="nav-text">
+                            <h3>Weather Alerts</h3>
+                            <p>Location-based</p>
+                        </div>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="m9 18 6-6-6-6"/>
+                        </svg>
+                    </div>
+                </button>
 
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+                <button class="nav-item" data-section="pest-detection">
+                    <div class="nav-item-content">
+                        <div class="nav-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="m8 2 1.88 1.88"/>
+                                <path d="M14.12 3.88 16 2"/>
+                                <path d="M9 7.13v-1a3.003 3.003 0 1 1 6 0v1"/>
+                                <path d="M12 20c-3.3 0-6-2.7-6-6v-3a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v3c0 3.3-2.7 6-6 6"/>
+                                <path d="M12 20v-9"/>
+                                <path d="M6.53 9C4.6 8.8 3 7.1 3 5"/>
+                                <path d="M6 13H2"/>
+                                <path d="M3 21c0-2.1 1.7-3.9 3.8-4"/>
+                                <path d="M20.97 5c0 2.1-1.6 3.8-3.5 4"/>
+                                <path d="M22 13h-4"/>
+                                <path d="M17.2 17c2.1.1 3.8 1.9 3.8 4"/>
+                            </svg>
+                        </div>
+                        <div class="nav-text">
+                            <h3>Pest Detection</h3>
+                            <p>Image analysis</p>
+                        </div>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="m9 18 6-6-6-6"/>
+                        </svg>
+                    </div>
+                </button>
+
+                <button class="nav-item" data-section="market-prices">
+                    <div class="nav-item-content">
+                        <div class="nav-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <polyline points="22,12 18,12 15,21 9,3 6,12 2,12"/>
+                            </svg>
+                        </div>
+                        <div class="nav-text">
+                            <h3>Market Prices</h3>
+                            <p>Live updates</p>
+                        </div>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="m9 18 6-6-6-6"/>
+                        </svg>
+                    </div>
+                </button>
+
+                <button class="nav-item" data-section="soil-health">
+                    <div class="nav-item-content">
+                        <div class="nav-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/>
+                                <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>
+                            </svg>
+                        </div>
+                        <div class="nav-text">
+                            <h3>Soil Health</h3>
+                            <p>Recommendations</p>
+                        </div>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="m9 18 6-6-6-6"/>
+                        </svg>
+                    </div>
+                </button>
+            </nav>
+
+            <footer class="sidebar-footer">
+                <div class="language-selector">
+                    <select id="language-select" class="language-select">
+                        <option value="English">English</option>
+                        <option value="Hindi">हिंदी</option>
+                        <option value="Bengali">বাংলা</option>
+                        <option value="Tamil">தமிழ்</option>
+                        <option value="Telugu">తెలుగు</option>
+                        <option value="Marathi">मराठी</option>
+                    </select>
+                    <svg class="globe-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="m12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/>
+                        <path d="M2 12h20"/>
+                    </svg>
+                </div>
+            </footer>
+        </aside>
+
+        <!-- Main Content -->
+        <main id="main-content" class="main-content">
+            <!-- Chat Interface -->
+            <div id="chat-section" class="content-section active">
+                <header class="content-header">
+                    <div>
+                        <h2 id="section-title" class="section-title">AI Crop Advisor</h2>
+                        <p class="section-subtitle">Get personalized farming guidance</p>
+                    </div>
+                    <div class="online-status">
+                        <div class="status-dot"></div>
+                        <span>Online</span>
+                    </div>
+                </header>
+
+                <div class="chat-container">
+                    <div id="messages" class="messages"></div>
+                    
+                    <div class="quick-actions" id="quick-actions">
+                        <button class="quick-action" data-action="weather">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"/>
+                            </svg>
+                            Weather Forecast
+                        </button>
+                        <button class="quick-action" data-action="crops">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M2 12h20l-2-7H4l-2 7Zm0 0v7a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-7"/>
+                            </svg>
+                            Seasonal Crops
+                        </button>
+                        <button class="quick-action" data-action="prices">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <polyline points="22,12 18,12 15,21 9,3 6,12 2,12"/>
+                            </svg>
+                            Market Prices
+                        </button>
+                        <button class="quick-action" data-action="soil">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/>
+                            </svg>
+                            Soil Health
+                        </button>
+                    </div>
+                </div>
+
+                <div class="chat-input">
+                    <div class="input-container">
+                        <input 
+                            type="text" 
+                            id="message-input" 
+                            placeholder="Ask me about crops, weather, soil, pests, or market prices..."
+                            class="message-input"
+                        >
+                        <button id="mic-button" class="mic-button">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="m12 1 0 22"/>
+                                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <button id="send-button" class="send-button">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="m22 2-7 20-4-9-9-4Z"/>
+                            <path d="M22 2 11 13"/>
+                        </svg>
+                        <span class="send-text">Send</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Weather Widget Section -->
+            <div id="weather-section" class="content-section">
+                <div id="weather-widget" class="widget-container"></div>
+            </div>
+
+            <!-- Market Widget Section -->
+            <div id="market-section" class="content-section">
+                <div id="market-widget" class="widget-container"></div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
 </html>
